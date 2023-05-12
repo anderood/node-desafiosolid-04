@@ -37,10 +37,6 @@ class UsersRepository implements IUsersRepository {
   findById(id: string): User | undefined {
     const findId = this.users.find((user) => user.id === id);
 
-    if (!findId) {
-      throw new Error("Message");
-    }
-
     return findId;
   }
 
@@ -51,7 +47,6 @@ class UsersRepository implements IUsersRepository {
   }
 
   turnAdmin(receivedUser: User): User {
-
     const user = receivedUser;
 
     user.admin = true;
