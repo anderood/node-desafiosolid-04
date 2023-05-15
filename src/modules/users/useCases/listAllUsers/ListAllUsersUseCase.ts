@@ -12,7 +12,8 @@ class ListAllUsersUseCase {
     const findUser = this.usersRepository.findById(user_id);
 
     if (findUser.admin) {
-      return this.usersRepository.list();
+      const users = this.usersRepository.list();
+      return users;
     }
     throw new Error("Message ErRor");
   }
